@@ -5,35 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sri Pranay — AI/ML Portfolio</title>
   <meta name="description" content="Sri Pranay — Machine Learning, NLP, RAG and Data Science Portfolio" />
-  <meta property="og:title" content="Sri Pranay — AI/ML Portfolio" />
-  <meta property="og:description" content="Projects in RAG, NLP, Analytics, and ML with live demos and GitHub repos." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://sripranay.github.io/pranay-portfolio/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script> // set theme early to avoid flash
-    (()=>{const t=localStorage.getItem('theme');
-      if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
-        document.documentElement.classList.add('dark');
-      } else { document.documentElement.classList.remove('dark'); }
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css"> <!-- optional external css -->
+  <script>
+    (() => {
+      const t = localStorage.getItem("theme");
+      if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
     })();
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root{--ring: 255, 99, 132}
-    body{font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji','Segoe UI Emoji', 'Segoe UI Symbol';}
-    /* animated neural gradient */
-    .neuro{background: radial-gradient(1200px 600px at 10% -20%, rgba(99,102,241,.25), transparent 40%),
-                         radial-gradient(800px 400px at 100% 0%, rgba(16,185,129,.25), transparent 40%),
-                         radial-gradient(600px 300px at -10% 100%, rgba(236,72,153,.25), transparent 40%);} 
-    @keyframes float { 0%,100%{transform: translateY(0)} 50%{transform: translateY(-6px)} }
-    .float { animation: float 6s ease-in-out infinite; }
-  </style>
 </head>
-<body class="neuro bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+<body class="bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100">
+
   <!-- NAV -->
-  <nav class="backdrop-blur supports-[backdrop-filter]:bg-white/50 dark:supports-[backdrop-filter]:bg-neutral-900/50 bg-white/70 dark:bg-neutral-900/70 sticky top-0 z-50 border-b border-neutral-200/70 dark:border-neutral-800/70">
+  <nav class="sticky top-0 z-50 backdrop-blur bg-white/70 dark:bg-neutral-900/70 border-b border-neutral-200 dark:border-neutral-800">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="#home" class="font-semibold">Sri Pranay</a>
       <div class="hidden sm:flex items-center gap-6 text-sm">
@@ -43,184 +32,122 @@
         <a href="#education" class="hover:opacity-80">Education</a>
         <a href="#contact" class="hover:opacity-80">Contact</a>
       </div>
-      <button id="themeToggle" class="px-3 py-1.5 rounded-lg border border-neutral-300/70 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 text-sm">🌙</button>
+      <button id="themeToggle" class="px-3 py-1.5 rounded-lg border border-neutral-300 dark:border-neutral-700 text-sm">🌙</button>
     </div>
   </nav>
 
   <!-- HERO -->
-  <header id="home" class="max-w-6xl mx-auto px-4">
-    <div class="grid md:grid-cols-2 gap-8 items-center py-12">
-      <div>
-        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">AI/ML Engineer & Data Scientist</h1>
-        <p class="mt-4 text-neutral-700 dark:text-neutral-300 leading-relaxed">
-          I build <span class="font-semibold">RAG systems</span>, <span class="font-semibold">NLP pipelines</span>, and <span class="font-semibold">analytics apps</span>—from ingestion to deployment. Currently shipping production‑ready demos with <strong>Streamlit</strong>, <strong>ChromaDB</strong>, and <strong>SentenceTransformers</strong>.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="resume.pdf" download class="px-4 py-2 rounded-xl bg-black text-white dark:bg-white dark:text-black">Download CV</a>
-          <a href="#projects" class="px-4 py-2 rounded-xl border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800">See Projects</a>
-        </div>
-        <div class="mt-6 flex flex-wrap gap-2 text-xs text-neutral-600 dark:text-neutral-400">
-          <span class="px-2 py-1 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">Python</span>
-          <span class="px-2 py-1 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">PyTorch</span>
-          <span class="px-2 py-1 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">Streamlit</span>
-          <span class="px-2 py-1 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">ChromaDB</span>
-          <span class="px-2 py-1 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">Sentence‑Transformers</span>
-          <span class="px-2 py-1 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">SQL</span>
-          <span class="px-2 py-1 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">Tableau</span>
-        </div>
-      </div>
-      <div class="relative float">
-        <div class="rounded-3xl p-1 bg-gradient-to-br from-indigo-500/30 via-emerald-500/30 to-pink-500/30">
-          <div class="rounded-2xl bg-white dark:bg-neutral-900 p-6 border border-neutral-200/80 dark:border-neutral-800/80">
-            <h3 class="font-semibold">Now Building</h3>
-            <p class="text-sm mt-2 text-neutral-700 dark:text-neutral-300">Financial Analysis RAG • Interactive time‑series + semantic search • Deployed on Streamlit Cloud</p>
-            <div class="mt-4 flex gap-3 text-sm">
-              <a class="underline" target="_blank" rel="noreferrer" href="https://finragproject-4xh5mghqxycwpbhxwut5xo.streamlit.app/">Live App</a>
-              <span>•</span>
-              <a class="underline" target="_blank" rel="noreferrer" href="https://github.com/sripranay/fin_rag_project">GitHub</a>
-            </div>
-          </div>
-        </div>
-      </div>
+  <header id="home" class="max-w-6xl mx-auto px-4 py-12">
+    <h1 class="text-4xl md:text-5xl font-extrabold">AI/ML Engineer & Data Scientist</h1>
+    <p class="mt-4 text-neutral-700 dark:text-neutral-300 leading-relaxed">
+      I build <b>RAG systems</b>, <b>NLP pipelines</b>, and <b>analytics apps</b> — from ingestion to deployment.
+    </p>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a href="resume.pdf" download class="px-4 py-2 rounded-xl bg-black text-white dark:bg-white dark:text-black">Download CV</a>
+      <a href="#projects" class="px-4 py-2 rounded-xl border border-neutral-300 dark:border-neutral-700">See Projects</a>
     </div>
   </header>
 
   <!-- PROJECTS -->
   <section id="projects" class="max-w-6xl mx-auto px-4 py-8">
-    <h2 class="text-2xl font-bold mb-4">Featured Projects</h2>
+    <h2 class="text-2xl font-bold mb-4">Projects</h2>
     <div class="grid md:grid-cols-2 gap-6">
+
       <!-- RAG Project -->
-      <article class="group rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/70 dark:bg-neutral-900/70 p-5 hover:shadow-lg transition">
-        <div class="flex items-baseline justify-between">
-          <h3 class="font-semibold text-lg">Financial Analysis RAG with Time‑Series Data</h3>
-          <span class="text-xs text-neutral-500">Aug 2025 – Present</span>
-        </div>
-        <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">Domain: Finance, RAG, Time‑Series • Tools: Python, Streamlit, ChromaDB, all‑MiniLM‑L6‑v2, yfinance</p>
-        <ul class="list-disc pl-5 mt-2 text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
-          <li>Semantic retrieval over daily market facts + interactive OHLCV charts with SMA(5/10) & deltas.</li>
-          <li>Embeddings (SentenceTransformers) stored in ChromaDB with ticker/date metadata for fast recall.</li>
-          <li>Robust deployment: caching, SQLite patch (<code>pysqlite3-binary</code>), defensive parsing.</li>
+      <article class="rounded-2xl border p-5 bg-white dark:bg-neutral-900">
+        <h3 class="font-semibold text-lg">Financial Analysis RAG with Time-Series Data</h3>
+        <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">
+          Domain: Finance, RAG, Time-Series • Tools: Python, Streamlit, ChromaDB
+        </p>
+        <ul class="list-disc pl-5 mt-2 text-sm">
+          <li>Semantic retrieval over daily market facts + OHLCV charts with SMA overlays.</li>
+          <li>Deployed on Streamlit Cloud with caching + SQLite patch.</li>
         </ul>
-        <div class="mt-3 text-sm flex flex-wrap gap-3">
-          <a class="px-3 py-1.5 rounded-lg border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800" href="https://finragproject-4xh5mghqxycwpbhxwut5xo.streamlit.app/" target="_blank">Live App</a>
-          <a class="px-3 py-1.5 rounded-lg border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800" href="https://github.com/sripranay/fin_rag_project" target="_blank">GitHub</a>
+        <div class="mt-3 flex gap-3 text-sm">
+          <a class="link-btn" href="https://finragproject-4xh5mghqxycwpbhxwut5xo.streamlit.app/" target="_blank" rel="noopener noreferrer">Live App</a>
+          <a class="link-btn" href="https://github.com/sripranay/fin_rag_project" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       </article>
 
       <!-- OCR Project -->
-      <article class="group rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/70 dark:bg-neutral-900/70 p-5 hover:shadow-lg transition">
-        <div class="flex items-baseline justify-between">
-          <h3 class="font-semibold text-lg">OCR Handwriting Recognition using TrOCR</h3>
-          <span class="text-xs text-neutral-500">Jan 2025 – Mar 2025</span>
-        </div>
-        <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">Domain: NLP, ML • Tools: Python, PyTorch, HF Transformers, TrOCR</p>
-        <ul class="list-disc pl-5 mt-2 text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
-          <li>Fine‑tuned TrOCR on IAM dataset, achieving 6.3% CER and 14.3% WER.</li>
-          <li>End‑to‑end pipeline: preprocessing → label mapping → tokenization → transformer model.</li>
-          <li>Mitigated overfitting via batch tuning and Trainer API monitoring.</li>
+      <article class="rounded-2xl border p-5 bg-white dark:bg-neutral-900">
+        <h3 class="font-semibold text-lg">OCR Handwriting Recognition using TrOCR</h3>
+        <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">NLP • Tools: PyTorch, HF Transformers</p>
+        <ul class="list-disc pl-5 mt-2 text-sm">
+          <li>Fine-tuned TrOCR on IAM dataset (6.3% CER, 14.3% WER).</li>
         </ul>
-        <div class="mt-3 text-sm flex flex-wrap gap-3">
-          <a class="px-3 py-1.5 rounded-lg border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800" href="https://github.com/sripranay/ocr-Handwriting-Recognition" target="_blank">GitHub</a>
+        <div class="mt-3 flex gap-3 text-sm">
+          <a class="link-btn" href="https://github.com/sripranay/ocr-Handwriting-Recognition" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       </article>
 
       <!-- Zomato EDA -->
-      <article class="group rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/70 dark:bg-neutral-900/70 p-5 hover:shadow-lg transition">
-        <div class="flex items-baseline justify-between">
-          <h3 class="font-semibold text-lg">Zomato EDA — Insights & Forecasting</h3>
-          <span class="text-xs text-neutral-500">Jun 2024 – Aug 2024</span>
-        </div>
-        <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">Domain: Data Analysis • Tools: Python, Pandas, Matplotlib, Seaborn, Plotly</p>
-        <ul class="list-disc pl-5 mt-2 text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
-          <li>Analyzed 3k+ records to uncover demand patterns, top categories, and peak order times.</li>
-          <li>Built 5+ visualizations; baseline forecasting (~70% accuracy) for planning.</li>
+      <article class="rounded-2xl border p-5 bg-white dark:bg-neutral-900">
+        <h3 class="font-semibold text-lg">Zomato EDA — Insights & Forecasting</h3>
+        <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">Data Analysis • Tools: Pandas, Seaborn</p>
+        <ul class="list-disc pl-5 mt-2 text-sm">
+          <li>Analyzed 3k+ records, visualized demand patterns, built forecasting models.</li>
         </ul>
-        <div class="mt-3 text-sm flex flex-wrap gap-3">
-          <a class="px-3 py-1.5 rounded-lg border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800" href="https://github.com/sripranay/Zomato-EDA-AI-ML" target="_blank">GitHub</a>
+        <div class="mt-3 flex gap-3 text-sm">
+          <a class="link-btn" href="https://github.com/sripranay/Zomato-EDA-AI-ML" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       </article>
 
       <!-- AutoScout24 -->
-      <article class="group rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/70 dark:bg-neutral-900/70 p-5 hover:shadow-lg transition">
-        <div class="flex items-baseline justify-between">
-          <h3 class="font-semibold text-lg">AutoScout24 Car Price Prediction</h3>
-          <span class="text-xs text-neutral-500">Aug 2023 – Nov 2023</span>
-        </div>
-        <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">Domain: ML • Tools: Scikit‑learn, Pandas, Matplotlib, Seaborn</p>
-        <ul class="list-disc pl-5 mt-2 text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
-          <li>Cleaned 15k+ listings; engineered features, handled outliers, and compared Linear/Ridge/Lasso.</li>
-          <li>Achieved R²≈0.896 with GridSearchCV; ~22% improvement via regularization.</li>
+      <article class="rounded-2xl border p-5 bg-white dark:bg-neutral-900">
+        <h3 class="font-semibold text-lg">AutoScout24 Car Price Prediction</h3>
+        <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">Machine Learning • Tools: Scikit-learn, Pandas</p>
+        <ul class="list-disc pl-5 mt-2 text-sm">
+          <li>Cleaned & processed 15k+ listings; achieved R²≈0.896 using Ridge/Lasso.</li>
         </ul>
-        <div class="mt-3 text-sm flex flex-wrap gap-3">
-          <span class="px-3 py-1.5 rounded-lg border border-dashed border-neutral-300 dark:border-neutral-700 text-neutral-500">Repo: add link</span>
+        <div class="mt-3 flex gap-3 text-sm">
+          <span class="text-neutral-500">Repo: Add link</span>
         </div>
       </article>
+
     </div>
   </section>
 
   <!-- SKILLS -->
   <section id="skills" class="max-w-6xl mx-auto px-4 py-8">
     <h2 class="text-2xl font-bold mb-4">Skills</h2>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      <div class="p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60"><h3 class="font-medium">Technical</h3><p class="text-sm mt-1 text-neutral-700 dark:text-neutral-300">Python, Java, SQL, EDA, NLP, LLMs</p></div>
-      <div class="p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60"><h3 class="font-medium">Tools</h3><p class="text-sm mt-1 text-neutral-700 dark:text-neutral-300">PyTorch, TensorFlow, Streamlit, Git/GitHub</p></div>
-      <div class="p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60"><h3 class="font-medium">Analytics</h3><p class="text-sm mt-1 text-neutral-700 dark:text-neutral-300">Tableau, Power BI, Excel</p></div>
-      <div class="p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60"><h3 class="font-medium">Soft</h3><p class="text-sm mt-1 text-neutral-700 dark:text-neutral-300">Leadership, Teamwork, Problem Solving</p></div>
-    </div>
+    <p>Python • PyTorch • TensorFlow • Streamlit • SQL • Tableau • NLP • LLMs</p>
   </section>
 
   <!-- EXPERIENCE -->
   <section id="experience" class="max-w-6xl mx-auto px-4 py-8">
     <h2 class="text-2xl font-bold mb-4">Experience</h2>
-    <article class="p-5 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60">
-      <div class="flex items-baseline justify-between">
-        <h3 class="font-semibold">Business Analyst Intern — Vibe Store</h3>
-        <span class="text-xs text-neutral-500">Mar 2025 – May 2025</span>
-      </div>
-      <ul class="list-disc pl-5 mt-2 text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
-        <li>Delivered insights that improved operations and decision‑making.</li>
-        <li>Automated sales reports via Shiprocket dashboard to support data‑driven decisions.</li>
-        <li>Transformed raw data into actionable insights using SQL & Tableau.</li>
-        <li>Secured partnerships with 25+ institutions, boosting visibility and revenue.</li>
-      </ul>
-    </article>
+    <p><b>Business Analyst Intern – Vibe Store</b> (Mar–May 2025)</p>
+    <ul class="list-disc pl-5 mt-2 text-sm">
+      <li>Automated reports, transformed raw data with SQL & Tableau.</li>
+    </ul>
   </section>
 
   <!-- EDUCATION -->
   <section id="education" class="max-w-6xl mx-auto px-4 py-8">
     <h2 class="text-2xl font-bold mb-4">Education</h2>
-    <div class="grid gap-3">
-      <div class="p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60"><p class="text-sm"><span class="font-medium">Lovely Professional University</span> — B.Tech, CSE (Aug 2022 – Present), Punjab, India</p></div>
-      <div class="p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60"><p class="text-sm"><span class="font-medium">Sri Chaitanya</span> — Intermediate (Jun 2020 – May 2022), Hyderabad</p></div>
-      <div class="p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60"><p class="text-sm"><span class="font-medium">Sri Chaitanya</span> — Matriculation (Jul 2019 – Apr 2020), Hyderabad</p></div>
-    </div>
+    <p><b>Lovely Professional University</b> — B.Tech CSE (2022–Present)</p>
   </section>
 
   <!-- CONTACT -->
   <section id="contact" class="max-w-6xl mx-auto px-4 py-8">
     <h2 class="text-2xl font-bold mb-4">Contact</h2>
-    <div class="p-5 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60">
-      <ul class="text-sm grid sm:grid-cols-2 gap-2">
-        <li><strong>Email:</strong> <a class="underline" href="mailto:sripranay004@gmail.com">sripranay004@gmail.com</a></li>
-        <li><strong>LinkedIn:</strong> <a class="underline" target="_blank" href="https://www.linkedin.com/in/sripranay31/">linkedin.com/in/sripranay31</a></li>
-        <li><strong>GitHub:</strong> <a class="underline" target="_blank" href="https://github.com/sripranay">github.com/sripranay</a></li>
-        <li><strong>LeetCode:</strong> <a class="underline" target="_blank" href="https://leetcode.com/u/SriPranay/">leetcode.com/u/SriPranay</a></li>
-      </ul>
-    </div>
+    <ul>
+      <li>Email: <a href="mailto:sripranay004@gmail.com">sripranay004@gmail.com</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/sripranay31/" target="_blank">linkedin.com/in/sripranay31</a></li>
+      <li>GitHub: <a href="https://github.com/sripranay" target="_blank">github.com/sripranay</a></li>
+    </ul>
   </section>
 
-  <footer class="max-w-6xl mx-auto px-4 py-10 text-xs text-neutral-500">
-    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-      <p>© <span id="year"></span> Sri Pranay. Built with Tailwind. Hosted on GitHub Pages.</p>
-      <a class="underline" href="#home">Back to top ↑</a>
-    </div>
+  <footer class="text-center py-6 text-xs text-neutral-500">
+    © <span id="year"></span> Sri Pranay — Built with Tailwind • Hosted on GitHub Pages
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('themeToggle').addEventListener('click', ()=>{
-      const isDark=document.documentElement.classList.toggle('dark');
-      localStorage.setItem('theme', isDark? 'dark':'light');
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      const isDark = document.documentElement.classList.toggle("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
     });
   </script>
 </body>
