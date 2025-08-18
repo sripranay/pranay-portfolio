@@ -1,205 +1,227 @@
-<!-- trigger build -->
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sri Pranay — Portfolio</title>
+  <title>Sri Pranay — AI/ML Portfolio</title>
+  <meta name="description" content="Sri Pranay — Machine Learning, NLP, RAG and Data Science Portfolio" />
+  <meta property="og:title" content="Sri Pranay — AI/ML Portfolio" />
+  <meta property="og:description" content="Projects in RAG, NLP, Analytics, and ML with live demos and GitHub repos." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sripranay.github.io/pranay-portfolio/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script> // set theme early to avoid flash
+    (()=>{const t=localStorage.getItem('theme');
+      if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+        document.documentElement.classList.add('dark');
+      } else { document.documentElement.classList.remove('dark'); }
+    })();
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <meta name="description" content="Sri Pranay — ML, NLP, RAG and Data Science Portfolio" />
+  <style>
+    :root{--ring: 255, 99, 132}
+    body{font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji','Segoe UI Emoji', 'Segoe UI Symbol';}
+    /* animated neural gradient */
+    .neuro{background: radial-gradient(1200px 600px at 10% -20%, rgba(99,102,241,.25), transparent 40%),
+                         radial-gradient(800px 400px at 100% 0%, rgba(16,185,129,.25), transparent 40%),
+                         radial-gradient(600px 300px at -10% 100%, rgba(236,72,153,.25), transparent 40%);} 
+    @keyframes float { 0%,100%{transform: translateY(0)} 50%{transform: translateY(-6px)} }
+    .float { animation: float 6s ease-in-out infinite; }
+  </style>
 </head>
-<body class="bg-neutral-50 text-neutral-900">
-  <!-- Header -->
-  <header class="max-w-5xl mx-auto px-4 py-8">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-      <div>
-        <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Sri Pranay</h1>
-        <p class="text-sm md:text-base text-neutral-600 mt-1">ML & Data Science • NLP • RAG • Business Analytics</p>
+<body class="neuro bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+  <!-- NAV -->
+  <nav class="backdrop-blur supports-[backdrop-filter]:bg-white/50 dark:supports-[backdrop-filter]:bg-neutral-900/50 bg-white/70 dark:bg-neutral-900/70 sticky top-0 z-50 border-b border-neutral-200/70 dark:border-neutral-800/70">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="font-semibold">Sri Pranay</a>
+      <div class="hidden sm:flex items-center gap-6 text-sm">
+        <a href="#projects" class="hover:opacity-80">Projects</a>
+        <a href="#skills" class="hover:opacity-80">Skills</a>
+        <a href="#experience" class="hover:opacity-80">Experience</a>
+        <a href="#education" class="hover:opacity-80">Education</a>
+        <a href="#contact" class="hover:opacity-80">Contact</a>
       </div>
-      <div class="text-sm md:text-base space-x-3">
-        <a class="underline hover:no-underline" href="mailto:sripranay004@gmail.com">sripranay004@gmail.com</a>
-        <span>•</span>
-        <a class="underline hover:no-underline" href="https://www.linkedin.com/in/sripranay31/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <span>•</span>
-        <a class="underline hover:no-underline" href="https://github.com/sripranay" target="_blank" rel="noreferrer">GitHub</a>
-        <span>•</span>
-        <a class="underline hover:no-underline" href="https://leetcode.com/u/SriPranay/" target="_blank" rel="noreferrer">LeetCode</a>
-        <span>•</span>
-        <a class="px-3 py-1.5 rounded-full bg-black text-white" href="resume.pdf" download>Download CV</a>
+      <button id="themeToggle" class="px-3 py-1.5 rounded-lg border border-neutral-300/70 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 text-sm">🌙</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="max-w-6xl mx-auto px-4">
+    <div class="grid md:grid-cols-2 gap-8 items-center py-12">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">AI/ML Engineer & Data Scientist</h1>
+        <p class="mt-4 text-neutral-700 dark:text-neutral-300 leading-relaxed">
+          I build <span class="font-semibold">RAG systems</span>, <span class="font-semibold">NLP pipelines</span>, and <span class="font-semibold">analytics apps</span>—from ingestion to deployment. Currently shipping production‑ready demos with <strong>Streamlit</strong>, <strong>ChromaDB</strong>, and <strong>SentenceTransformers</strong>.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="resume.pdf" download class="px-4 py-2 rounded-xl bg-black text-white dark:bg-white dark:text-black">Download CV</a>
+          <a href="#projects" class="px-4 py-2 rounded-xl border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800">See Projects</a>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-2 text-xs text-neutral-600 dark:text-neutral-400">
+          <span class="px-2 py-1 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">Python</span>
+          <span class="px-2 py-1 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">PyTorch</span>
+          <span class="px-2 py-1 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">Streamlit</span>
+          <span class="px-2 py-1 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">ChromaDB</span>
+          <span class="px-2 py-1 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">Sentence‑Transformers</span>
+          <span class="px-2 py-1 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">SQL</span>
+          <span class="px-2 py-1 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">Tableau</span>
+        </div>
+      </div>
+      <div class="relative float">
+        <div class="rounded-3xl p-1 bg-gradient-to-br from-indigo-500/30 via-emerald-500/30 to-pink-500/30">
+          <div class="rounded-2xl bg-white dark:bg-neutral-900 p-6 border border-neutral-200/80 dark:border-neutral-800/80">
+            <h3 class="font-semibold">Now Building</h3>
+            <p class="text-sm mt-2 text-neutral-700 dark:text-neutral-300">Financial Analysis RAG • Interactive time‑series + semantic search • Deployed on Streamlit Cloud</p>
+            <div class="mt-4 flex gap-3 text-sm">
+              <a class="underline" target="_blank" rel="noreferrer" href="https://finragproject-4xh5mghqxycwpbhxwut5xo.streamlit.app/">Live App</a>
+              <span>•</span>
+              <a class="underline" target="_blank" rel="noreferrer" href="https://github.com/sripranay/fin_rag_project">GitHub</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- Summary -->
-  <section class="max-w-5xl mx-auto px-4">
-    <div class="rounded-2xl bg-white shadow-sm border border-neutral-200 p-5">
-      <p class="text-neutral-700 leading-relaxed">Data Science and ML practitioner with hands-on experience across NLP, RAG pipelines, and analytics dashboards. Comfortable shipping end‑to‑end: data ingestion, modeling, evaluation, and lightweight deployment (Streamlit/Cloud). Seeking opportunities to build real‑world AI features with measurable impact.</p>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section class="max-w-5xl mx-auto px-4 mt-8">
-    <h2 class="text-xl font-semibold mb-3">Skills</h2>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-      <div class="p-4 bg-white border border-neutral-200 rounded-2xl">
-        <h3 class="font-medium">Technical</h3>
-        <p class="text-sm text-neutral-700 mt-1">Python, Java, EDA, SQL, NLP, LLMs</p>
-      </div>
-      <div class="p-4 bg-white border border-neutral-200 rounded-2xl">
-        <h3 class="font-medium">Tools / Platforms</h3>
-        <p class="text-sm text-neutral-700 mt-1">GitHub, Tableau, Power BI, Excel, PyTorch, TensorFlow</p>
-      </div>
-      <div class="p-4 bg-white border border-neutral-200 rounded-2xl">
-        <h3 class="font-medium">Soft Skills</h3>
-        <p class="text-sm text-neutral-700 mt-1">Leadership, Team Handling, Adaptability, Problem Solving</p>
-      </div>
-      <div class="p-4 bg-white border border-neutral-200 rounded-2xl">
-        <h3 class="font-medium">Languages</h3>
-        <p class="text-sm text-neutral-700 mt-1">English, Hindi, Telugu</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section class="max-w-5xl mx-auto px-4 mt-10">
-    <h2 class="text-xl font-semibold mb-3">Experience</h2>
-    <div class="space-y-4">
-      <article class="p-5 bg-white border border-neutral-200 rounded-2xl">
-        <div class="flex items-baseline justify-between gap-3">
-          <h3 class="font-semibold">Business Analyst Intern — Vibe Store</h3>
-          <span class="text-sm text-neutral-500">Mar 2025 – May 2025</span>
+  <!-- PROJECTS -->
+  <section id="projects" class="max-w-6xl mx-auto px-4 py-8">
+    <h2 class="text-2xl font-bold mb-4">Featured Projects</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- RAG Project -->
+      <article class="group rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/70 dark:bg-neutral-900/70 p-5 hover:shadow-lg transition">
+        <div class="flex items-baseline justify-between">
+          <h3 class="font-semibold text-lg">Financial Analysis RAG with Time‑Series Data</h3>
+          <span class="text-xs text-neutral-500">Aug 2025 – Present</span>
         </div>
-        <ul class="mt-2 text-sm text-neutral-700 list-disc pl-5 space-y-1">
-          <li>Collaborated cross‑functionally to provide insights that improved operations and informed decisions.</li>
-          <li>Automated sales reports via Shiprocket Dashboard to support data‑driven business decisions.</li>
-          <li>Utilized SQL and Tableau to transform raw data into actionable business insights.</li>
-          <li>Secured partnerships with 25+ institutions, boosting brand visibility, market reach, and revenue.</li>
+        <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">Domain: Finance, RAG, Time‑Series • Tools: Python, Streamlit, ChromaDB, all‑MiniLM‑L6‑v2, yfinance</p>
+        <ul class="list-disc pl-5 mt-2 text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+          <li>Semantic retrieval over daily market facts + interactive OHLCV charts with SMA(5/10) & deltas.</li>
+          <li>Embeddings (SentenceTransformers) stored in ChromaDB with ticker/date metadata for fast recall.</li>
+          <li>Robust deployment: caching, SQLite patch (<code>pysqlite3-binary</code>), defensive parsing.</li>
         </ul>
+        <div class="mt-3 text-sm flex flex-wrap gap-3">
+          <a class="px-3 py-1.5 rounded-lg border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800" href="https://finragproject-4xh5mghqxycwpbhxwut5xo.streamlit.app/" target="_blank">Live App</a>
+          <a class="px-3 py-1.5 rounded-lg border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800" href="https://github.com/sripranay/fin_rag_project" target="_blank">GitHub</a>
+        </div>
+      </article>
+
+      <!-- OCR Project -->
+      <article class="group rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/70 dark:bg-neutral-900/70 p-5 hover:shadow-lg transition">
+        <div class="flex items-baseline justify-between">
+          <h3 class="font-semibold text-lg">OCR Handwriting Recognition using TrOCR</h3>
+          <span class="text-xs text-neutral-500">Jan 2025 – Mar 2025</span>
+        </div>
+        <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">Domain: NLP, ML • Tools: Python, PyTorch, HF Transformers, TrOCR</p>
+        <ul class="list-disc pl-5 mt-2 text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+          <li>Fine‑tuned TrOCR on IAM dataset, achieving 6.3% CER and 14.3% WER.</li>
+          <li>End‑to‑end pipeline: preprocessing → label mapping → tokenization → transformer model.</li>
+          <li>Mitigated overfitting via batch tuning and Trainer API monitoring.</li>
+        </ul>
+        <div class="mt-3 text-sm flex flex-wrap gap-3">
+          <a class="px-3 py-1.5 rounded-lg border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800" href="https://github.com/sripranay/ocr-Handwriting-Recognition" target="_blank">GitHub</a>
+        </div>
+      </article>
+
+      <!-- Zomato EDA -->
+      <article class="group rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/70 dark:bg-neutral-900/70 p-5 hover:shadow-lg transition">
+        <div class="flex items-baseline justify-between">
+          <h3 class="font-semibold text-lg">Zomato EDA — Insights & Forecasting</h3>
+          <span class="text-xs text-neutral-500">Jun 2024 – Aug 2024</span>
+        </div>
+        <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">Domain: Data Analysis • Tools: Python, Pandas, Matplotlib, Seaborn, Plotly</p>
+        <ul class="list-disc pl-5 mt-2 text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+          <li>Analyzed 3k+ records to uncover demand patterns, top categories, and peak order times.</li>
+          <li>Built 5+ visualizations; baseline forecasting (~70% accuracy) for planning.</li>
+        </ul>
+        <div class="mt-3 text-sm flex flex-wrap gap-3">
+          <a class="px-3 py-1.5 rounded-lg border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800" href="https://github.com/sripranay/Zomato-EDA-AI-ML" target="_blank">GitHub</a>
+        </div>
+      </article>
+
+      <!-- AutoScout24 -->
+      <article class="group rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/70 dark:bg-neutral-900/70 p-5 hover:shadow-lg transition">
+        <div class="flex items-baseline justify-between">
+          <h3 class="font-semibold text-lg">AutoScout24 Car Price Prediction</h3>
+          <span class="text-xs text-neutral-500">Aug 2023 – Nov 2023</span>
+        </div>
+        <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">Domain: ML • Tools: Scikit‑learn, Pandas, Matplotlib, Seaborn</p>
+        <ul class="list-disc pl-5 mt-2 text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+          <li>Cleaned 15k+ listings; engineered features, handled outliers, and compared Linear/Ridge/Lasso.</li>
+          <li>Achieved R²≈0.896 with GridSearchCV; ~22% improvement via regularization.</li>
+        </ul>
+        <div class="mt-3 text-sm flex flex-wrap gap-3">
+          <span class="px-3 py-1.5 rounded-lg border border-dashed border-neutral-300 dark:border-neutral-700 text-neutral-500">Repo: add link</span>
+        </div>
       </article>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section class="max-w-5xl mx-auto px-4 mt-10">
-    <h2 class="text-xl font-semibold mb-3">Projects</h2>
+  <!-- SKILLS -->
+  <section id="skills" class="max-w-6xl mx-auto px-4 py-8">
+    <h2 class="text-2xl font-bold mb-4">Skills</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60"><h3 class="font-medium">Technical</h3><p class="text-sm mt-1 text-neutral-700 dark:text-neutral-300">Python, Java, SQL, EDA, NLP, LLMs</p></div>
+      <div class="p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60"><h3 class="font-medium">Tools</h3><p class="text-sm mt-1 text-neutral-700 dark:text-neutral-300">PyTorch, TensorFlow, Streamlit, Git/GitHub</p></div>
+      <div class="p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60"><h3 class="font-medium">Analytics</h3><p class="text-sm mt-1 text-neutral-700 dark:text-neutral-300">Tableau, Power BI, Excel</p></div>
+      <div class="p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60"><h3 class="font-medium">Soft</h3><p class="text-sm mt-1 text-neutral-700 dark:text-neutral-300">Leadership, Teamwork, Problem Solving</p></div>
+    </div>
+  </section>
 
-    <!-- NEW: Financial Analysis RAG -->
-    <article class="p-5 bg-white border border-emerald-200 rounded-2xl">
-      <div class="flex items-baseline justify-between gap-3">
-        <h3 class="font-semibold">Financial Analysis RAG with Time‑Series Data</h3>
-        <span class="text-sm text-neutral-500">Aug 2025 – Present</span>
+  <!-- EXPERIENCE -->
+  <section id="experience" class="max-w-6xl mx-auto px-4 py-8">
+    <h2 class="text-2xl font-bold mb-4">Experience</h2>
+    <article class="p-5 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60">
+      <div class="flex items-baseline justify-between">
+        <h3 class="font-semibold">Business Analyst Intern — Vibe Store</h3>
+        <span class="text-xs text-neutral-500">Mar 2025 – May 2025</span>
       </div>
-      <p class="text-xs text-neutral-600 mt-1">Domain: Finance, RAG, Time‑Series Analytics | Tools: Python, Streamlit, ChromaDB, SentenceTransformers (all‑MiniLM‑L6‑v2), yfinance, Pandas, NumPy, Matplotlib, Git/GitHub, Streamlit Cloud, pysqlite3-binary</p>
-      <ul class="mt-2 text-sm text-neutral-700 list-disc pl-5 space-y-1">
-        <li>Built a production‑ready RAG app that combines vector search over daily market facts with interactive time‑series charts to surface investment insights and risk context in real time.</li>
-        <li>Implemented ingestion using <strong>yfinance</strong> for OHLCV; normalized frames and generated daily fact sentences.</li>
-        <li>Embedded facts with <strong>SentenceTransformers (all‑MiniLM‑L6‑v2)</strong> and persisted in <strong>ChromaDB</strong> for fast semantic retrieval.</li>
-        <li>Designed a <strong>Streamlit</strong> UX with NL query, ticker filter, top‑K, retrieval distances + metadata, and a price chart module with last‑close, 1‑day Δ, period Δ, and <strong>SMA(5/10)</strong> overlays.</li>
-        <li>Added caching, SQLite compatibility patch (<code>pysqlite3-binary</code>), defensive parsing, and friendly error handling for reliable cloud deployment.</li>
-        <li>Deployed on <strong>Streamlit Cloud</strong> with pinned requirements and clear README.</li>
-        <li><strong>Outcome:</strong> indexed ~580+ daily facts across 7 tickers (e.g., RELIANCE.NS, TSLA, MSFT, GOOGL, TECHM.NS), enabling semantic Q&A + trend visualization.</li>
+      <ul class="list-disc pl-5 mt-2 text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+        <li>Delivered insights that improved operations and decision‑making.</li>
+        <li>Automated sales reports via Shiprocket dashboard to support data‑driven decisions.</li>
+        <li>Transformed raw data into actionable insights using SQL & Tableau.</li>
+        <li>Secured partnerships with 25+ institutions, boosting visibility and revenue.</li>
       </ul>
-      <div class="mt-3 text-sm">
-        <a class="underline" href="https://finragproject-4xh5mghqxycwpbhxwut5xo.streamlit.app/" target="_blank" rel="noreferrer">Live App</a>
-        <span class="mx-2">•</span>
-        <a class="underline" href="https://github.com/sripranay/fin_rag_project" target="_blank" rel="noreferrer">GitHub Repo</a>
-      </div>
-    </article>
-
-    <!-- OCR TrOCR -->
-    <article class="p-5 bg-white border border-neutral-200 rounded-2xl mt-4">
-      <div class="flex items-baseline justify-between gap-3">
-        <h3 class="font-semibold">OCR Handwriting Recognition using TrOCR</h3>
-        <span class="text-sm text-neutral-500">Jan 2025 – Mar 2025</span>
-      </div>
-      <p class="text-xs text-neutral-600 mt-1">Domain: NLP, Machine Learning | Tools: Python, PyTorch, Hugging Face Transformers, TrOCR</p>
-      <ul class="mt-2 text-sm text-neutral-700 list-disc pl-5 space-y-1">
-        <li>Fine‑tuned TrOCR on IAM dataset, achieving 6.3% CER and 14.3% WER for handwriting recognition.</li>
-        <li>Built OCR pipeline with image preprocessing, label mapping, tokenization, and transformer‑based model.</li>
-        <li>Addressed GPU limits and overfitting via batch tuning and Trainer API monitoring.</li>
-      </ul>
-      <p class="text-xs text-neutral-500 mt-2">Repo: <a class="underline" href="#" title="Replace with your repo">(add GitHub link)</a></p>
-    </article>
-
-    <!-- Swiggy EDA -->
-    <article class="p-5 bg-white border border-neutral-200 rounded-2xl mt-4">
-      <div class="flex items-baseline justify-between gap-3">
-        <h3 class="font-semibold">EDA on Swiggy Dataset</h3>
-        <span class="text-sm text-neutral-500">Jun 2024 – Aug 2024</span>
-      </div>
-      <p class="text-xs text-neutral-600 mt-1">Domain: Data Analysis | Tools: Python, Pandas, Matplotlib, Seaborn, Plotly</p>
-      <ul class="mt-2 text-sm text-neutral-700 list-disc pl-5 space-y-1">
-        <li>Analyzed 3,000+ records to find top food categories and peak times; improved targeting by 15%.</li>
-        <li>Created 5+ visualizations to reveal trends and customer behavior insights.</li>
-        <li>Built forecasting models (~70% accuracy) to aid planning and resource allocation.</li>
-      </ul>
-      <p class="text-xs text-neutral-500 mt-2">Repo: <a class="underline" href="#" title="Replace with your repo">(add GitHub link)</a></p>
-    </article>
-
-    <!-- AutoScout24 -->
-    <article class="p-5 bg-white border border-neutral-200 rounded-2xl mt-4">
-      <div class="flex items-baseline justify-between gap-3">
-        <h3 class="font-semibold">AutoScout24 Car Price Prediction</h3>
-        <span class="text-sm text-neutral-500">Aug 2023 – Nov 2023</span>
-      </div>
-      <p class="text-xs text-neutral-600 mt-1">Domain: Machine Learning | Tools: Python, Scikit‑learn, Pandas, Matplotlib, Seaborn</p>
-      <ul class="mt-2 text-sm text-neutral-700 list-disc pl-5 space-y-1">
-        <li>Cleaned & processed 15,000+ car listings; engineered features and handled outliers.</li>
-        <li>Trained Linear, Ridge, and Lasso models; achieved R² of 0.896 with GridSearchCV.</li>
-        <li>Evaluated via RMSE/MAE/Adjusted R²; +22% accuracy improvement via regularization.</li>
-      </ul>
-      <p class="text-xs text-neutral-500 mt-2">Repo: <a class="underline" href="#" title="Replace with your repo">(add GitHub link)</a></p>
     </article>
   </section>
 
-  <!-- Education -->
-  <section class="max-w-5xl mx-auto px-4 mt-10">
-    <h2 class="text-xl font-semibold mb-3">Education</h2>
+  <!-- EDUCATION -->
+  <section id="education" class="max-w-6xl mx-auto px-4 py-8">
+    <h2 class="text-2xl font-bold mb-4">Education</h2>
     <div class="grid gap-3">
-      <div class="p-4 bg-white border border-neutral-200 rounded-2xl">
-        <p class="text-sm"><span class="font-medium">Lovely Professional University</span> — B.Tech, CSE (Aug 2022 – Present), Punjab, India</p>
-      </div>
-      <div class="p-4 bg-white border border-neutral-200 rounded-2xl">
-        <p class="text-sm"><span class="font-medium">Sri Chaitanya</span> — Intermediate (Jun 2020 – May 2022), Hyderabad</p>
-      </div>
-      <div class="p-4 bg-white border border-neutral-200 rounded-2xl">
-        <p class="text-sm"><span class="font-medium">Sri Chaitanya</span> — Matriculation (Jul 2019 – Apr 2020), Hyderabad</p>
-      </div>
+      <div class="p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60"><p class="text-sm"><span class="font-medium">Lovely Professional University</span> — B.Tech, CSE (Aug 2022 – Present), Punjab, India</p></div>
+      <div class="p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60"><p class="text-sm"><span class="font-medium">Sri Chaitanya</span> — Intermediate (Jun 2020 – May 2022), Hyderabad</p></div>
+      <div class="p-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60"><p class="text-sm"><span class="font-medium">Sri Chaitanya</span> — Matriculation (Jul 2019 – Apr 2020), Hyderabad</p></div>
     </div>
   </section>
 
-  <!-- Certificates & Achievements -->
-  <section class="max-w-5xl mx-auto px-4 mt-10">
-    <h2 class="text-xl font-semibold mb-3">Certificates & Achievements</h2>
-    <div class="grid md:grid-cols-2 gap-3">
-      <div class="p-4 bg-white border border-neutral-200 rounded-2xl">
-        <h3 class="font-medium">Certificates</h3>
-        <ul class="mt-1 text-sm text-neutral-700 list-disc pl-5 space-y-1">
-          <li>Static Routing Configuration Using Packet Tracer (Apr 2024)</li>
-          <li>The Bits and Bytes of Computer Networking (Apr 2023)</li>
-          <li>SQL for Data Science (Feb 2023)</li>
-        </ul>
-      </div>
-      <div class="p-4 bg-white border border-neutral-200 rounded-2xl">
-        <h3 class="font-medium">Achievements</h3>
-        <ul class="mt-1 text-sm text-neutral-700 list-disc pl-5 space-y-1">
-          <li>Prompt Engineering — Coding Expert (Sep 2024)</li>
-          <li>AR Filter Development — Reskill (Spark AR Studio)</li>
-        </ul>
-      </div>
+  <!-- CONTACT -->
+  <section id="contact" class="max-w-6xl mx-auto px-4 py-8">
+    <h2 class="text-2xl font-bold mb-4">Contact</h2>
+    <div class="p-5 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60">
+      <ul class="text-sm grid sm:grid-cols-2 gap-2">
+        <li><strong>Email:</strong> <a class="underline" href="mailto:sripranay004@gmail.com">sripranay004@gmail.com</a></li>
+        <li><strong>LinkedIn:</strong> <a class="underline" target="_blank" href="https://www.linkedin.com/in/sripranay31/">linkedin.com/in/sripranay31</a></li>
+        <li><strong>GitHub:</strong> <a class="underline" target="_blank" href="https://github.com/sripranay">github.com/sripranay</a></li>
+        <li><strong>LeetCode:</strong> <a class="underline" target="_blank" href="https://leetcode.com/u/SriPranay/">leetcode.com/u/SriPranay</a></li>
+      </ul>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="max-w-5xl mx-auto px-4 my-10 text-xs text-neutral-500">
+  <footer class="max-w-6xl mx-auto px-4 py-10 text-xs text-neutral-500">
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-      <p>© <span id="year"></span> Sri Pranay. All rights reserved.</p>
-      <p>Built with Tailwind • Hosted on GitHub Pages / Netlify</p>
+      <p>© <span id="year"></span> Sri Pranay. Built with Tailwind. Hosted on GitHub Pages.</p>
+      <a class="underline" href="#home">Back to top ↑</a>
     </div>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('themeToggle').addEventListener('click', ()=>{
+      const isDark=document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark? 'dark':'light');
+    });
   </script>
 </body>
 </html>
