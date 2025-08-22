@@ -10,25 +10,22 @@ body {
 .link-btn {
   padding: 6px 14px;
   border-radius: 10px;
-  border: 1px solid #d1d5db; /* neutral border */
+  border: 1px solid #d1d5db;
   font-size: 0.9rem;
   font-weight: 500;
   transition: all 0.25s ease;
   display: inline-block;
 }
-
 .link-btn:hover {
-  background: #f3f4f6; /* light gray */
+  background: #f3f4f6;
   transform: translateY(-1px);
 }
-
 .dark .link-btn {
   border-color: #374151;
   color: #e5e7eb;
 }
-
 .dark .link-btn:hover {
-  background: #111827; /* darker hover in dark mode */
+  background: #111827;
 }
 
 /* Section Headings */
@@ -38,28 +35,25 @@ section h2 {
   margin-bottom: 1rem;
   position: relative;
 }
-
 section h2::after {
   content: "";
   display: block;
   width: 40px;
   height: 3px;
   margin-top: 6px;
-  background: linear-gradient(90deg, #3b82f6, #06b6d4); /* blue → cyan */
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
   border-radius: 2px;
 }
 
 /* Contact links */
 #contact a {
-  color: #2563eb; /* blue */
+  color: #2563eb;
   text-decoration: none;
   font-weight: 500;
 }
-
 #contact a:hover {
   text-decoration: underline;
 }
-
 .dark #contact a {
-  color: #38bdf8; /* cyan in dark mode */
+  color: #38bdf8;
 }
