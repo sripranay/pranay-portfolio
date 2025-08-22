@@ -1,16 +1,65 @@
-/* style.css – AI/ML theme extras */
+/* style.css – AI/ML Portfolio Theme */
+
+/* Font & Base */
 body {
   font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
 }
+
+/* Link Buttons */
 .link-btn {
-  padding: 6px 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  transition: all 0.2s ease;
+  padding: 6px 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db; /* neutral border */
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  display: inline-block;
 }
+
 .link-btn:hover {
-  background: #f5f5f5;
+  background: #f3f4f6; /* light gray */
+  transform: translateY(-1px);
 }
+
+.dark .link-btn {
+  border-color: #374151;
+  color: #e5e7eb;
+}
+
 .dark .link-btn:hover {
-  background: #1f2937;
+  background: #111827; /* darker hover in dark mode */
+}
+
+/* Section Headings */
+section h2 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+section h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 6px;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4); /* blue → cyan */
+  border-radius: 2px;
+}
+
+/* Contact links */
+#contact a {
+  color: #2563eb; /* blue */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+.dark #contact a {
+  color: #38bdf8; /* cyan in dark mode */
 }
