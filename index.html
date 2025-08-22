@@ -7,7 +7,7 @@
   <meta name="description" content="Sri Pranay — Machine Learning, NLP, RAG and Data Science Portfolio" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css"> <!-- optional external css -->
+  <link rel="stylesheet" href="style.css?v=2"> <!-- cache-bust -->
   <script>
     (() => {
       const t = localStorage.getItem("theme");
@@ -26,7 +26,7 @@
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="#home" class="font-semibold">Sri Pranay</a>
       <div class="hidden sm:flex items-center gap-6 text-sm">
-        <!-- Reordered: Experience → Projects → Skills → Education → Contact -->
+        <!-- Reordered -->
         <a href="#experience" class="hover:opacity-80">Experience</a>
         <a href="#projects" class="hover:opacity-80">Projects</a>
         <a href="#skills" class="hover:opacity-80">Skills</a>
@@ -50,7 +50,7 @@
     </div>
   </header>
 
-  <!-- EXPERIENCE (moved above Projects) -->
+  <!-- EXPERIENCE -->
   <section id="experience" class="max-w-6xl mx-auto px-4 py-8">
     <h2 class="text-2xl font-bold mb-4">Experience</h2>
     <p><b>Business Analyst Intern – Vibe Store</b> (Mar–May 2025)</p>
@@ -64,17 +64,17 @@
     <h2 class="text-2xl font-bold mb-4">Projects</h2>
     <div class="grid md:grid-cols-2 gap-6">
 
-      <!-- Voice Web Chatbot -->
+      <!-- Voice Chatbot -->
       <article class="rounded-2xl border p-5 bg-white dark:bg-neutral-900">
         <h3 class="font-semibold text-lg">Voice Web Chatbot (Mic Q&amp;A with Web Search &amp; TTS)</h3>
         <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">
           NLP, Speech, Information Retrieval • Tools: Python, Gradio, DDGS, Trafilatura, BeautifulSoup, gTTS, Regex
         </p>
         <ul class="list-disc pl-5 mt-2 text-sm">
-          <li>Voice-first assistant that records queries, fixes common typos, searches the web, summarizes, and speaks answers.</li>
-          <li>Retrieval pipeline using DDGS search, clean text extraction, and extractive sentence ranking with source attribution.</li>
-          <li>Pause / resume / stop TTS controls with clean, transparent responses.</li>
-          <li>Deployed on Hugging Face Spaces (CPU) with reproducible repo and push-to-deploy workflow.</li>
+          <li>Voice-first assistant that records queries, fixes typos, searches the web, summarizes, and speaks answers.</li>
+          <li>Retrieval pipeline using DDGS + Trafilatura/BS4 + extractive ranking with source attribution.</li>
+          <li>Pause / resume / stop TTS controls with clean summarization.</li>
+          <li>Deployed on Hugging Face Spaces with reproducible repo + push-to-deploy workflow.</li>
         </ul>
         <div class="mt-3 flex gap-3 text-sm">
           <a class="link-btn" href="https://huggingface.co/spaces/chinthojusripranay/voice-web-chatbot" target="_blank" rel="noopener noreferrer">Live App</a>
@@ -82,23 +82,23 @@
         </div>
       </article>
 
-      <!-- RAG Project -->
+      <!-- Finance RAG -->
       <article class="rounded-2xl border p-5 bg-white dark:bg-neutral-900">
         <h3 class="font-semibold text-lg">Financial Analysis RAG with Time-Series Data</h3>
         <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">
-          Domain: Finance, RAG, Time-Series • Tools: Python, Streamlit, ChromaDB
+          Finance, RAG, Time-Series • Tools: Python, Streamlit, ChromaDB
         </p>
         <ul class="list-disc pl-5 mt-2 text-sm">
-          <li>Semantic retrieval over daily market facts with interactive OHLCV charts and SMA overlays.</li>
-          <li>Deployed on Streamlit Cloud with caching and SQLite patch for ChromaDB stability.</li>
+          <li>Semantic retrieval over daily market facts with OHLCV charts and SMA overlays.</li>
+          <li>Deployed on Streamlit Cloud with caching and SQLite patch.</li>
         </ul>
         <div class="mt-3 flex gap-3 text-sm">
-          <a class="link-btn" href="https://finragproject-4xh5mghqxycwpbhxwut5xo.streamlit.app/" target="_blank" rel="noopener noreferrer">Live App</a>
-          <a class="link-btn" href="https://github.com/sripranay/fin_rag_project" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="link-btn" href="https://finragproject-4xh5mghqxycwpbhxwut5xo.streamlit.app/" target="_blank">Live App</a>
+          <a class="link-btn" href="https://github.com/sripranay/fin_rag_project" target="_blank">GitHub</a>
         </div>
       </article>
 
-      <!-- OCR Project -->
+      <!-- OCR -->
       <article class="rounded-2xl border p-5 bg-white dark:bg-neutral-900">
         <h3 class="font-semibold text-lg">OCR Handwriting Recognition using TrOCR</h3>
         <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">NLP • Tools: PyTorch, HF Transformers</p>
@@ -106,31 +106,30 @@
           <li>Fine-tuned TrOCR on IAM dataset (6.3% CER, 14.3% WER).</li>
         </ul>
         <div class="mt-3 flex gap-3 text-sm">
-          <a class="link-btn" href="https://github.com/sripranay/ocr-Handwriting-Recognition" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="link-btn" href="https://github.com/sripranay/ocr-Handwriting-Recognition" target="_blank">GitHub</a>
         </div>
       </article>
 
-      <!-- Zomato EDA -->
+      <!-- Zomato -->
       <article class="rounded-2xl border p-5 bg-white dark:bg-neutral-900">
         <h3 class="font-semibold text-lg">Zomato EDA — Insights &amp; Forecasting</h3>
         <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">Data Analysis • Tools: Pandas, Seaborn</p>
         <ul class="list-disc pl-5 mt-2 text-sm">
-          <li>Analyzed 3k+ records, visualized demand patterns, and built simple forecasting experiments.</li>
+          <li>Analyzed 3k+ records, visualized demand patterns, built forecasting models.</li>
         </ul>
         <div class="mt-3 flex gap-3 text-sm">
-          <a class="link-btn" href="https://github.com/sripranay/Zomato-EDA-AI-ML" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="link-btn" href="https://github.com/sripranay/Zomato-EDA-AI-ML" target="_blank">GitHub</a>
         </div>
       </article>
 
       <!-- AutoScout24 -->
       <article class="rounded-2xl border p-5 bg-white dark:bg-neutral-900">
         <h3 class="font-semibold text-lg">AutoScout24 Car Price Prediction</h3>
-        <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">Machine Learning • Tools: Scikit-learn, Pandas</p>
+        <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">ML • Tools: Scikit-learn, Pandas</p>
         <ul class="list-disc pl-5 mt-2 text-sm">
           <li>Cleaned &amp; processed 15k+ listings; achieved R²≈0.896 using Ridge/Lasso.</li>
         </ul>
         <div class="mt-3 flex gap-3 text-sm">
-          <!-- Replace with actual repo when ready -->
           <span class="text-neutral-500">Repo: Add link</span>
         </div>
       </article>
@@ -150,13 +149,13 @@
     <p><b>Lovely Professional University</b> — B.Tech CSE (2022–Present)</p>
   </section>
 
-  <!-- CONTACT (kept last) -->
+  <!-- CONTACT -->
   <section id="contact" class="max-w-6xl mx-auto px-4 py-8">
     <h2 class="text-2xl font-bold mb-4">Contact</h2>
     <ul>
       <li>Email: <a href="mailto:sripranay004@gmail.com">sripranay004@gmail.com</a></li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/sripranay31/" target="_blank" rel="noopener noreferrer">linkedin.com/in/sripranay31</a></li>
-      <li>GitHub: <a href="https://github.com/sripranay" target="_blank" rel="noopener noreferrer">github.com/sripranay</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/sripranay31/" target="_blank">linkedin.com/in/sripranay31</a></li>
+      <li>GitHub: <a href="https://github.com/sripranay" target="_blank">github.com/sripranay</a></li>
     </ul>
   </section>
 
