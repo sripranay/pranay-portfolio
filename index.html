@@ -7,7 +7,7 @@
   <meta name="description" content="Sri Pranay — Machine Learning, NLP, RAG and Data Science Portfolio" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body class="bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100">
 
@@ -27,35 +27,41 @@
   </nav>
 
   <!-- HERO -->
-  <header id="home" class="max-w-6xl mx-auto px-4 py-16 text-center">
-    <h1 class="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
-      AI/ML Engineer & Data Scientist
-    </h1>
-    <p class="mt-6 text-lg text-neutral-700 dark:text-neutral-300 max-w-2xl mx-auto leading-relaxed">
-      I design and deploy <b>AI-driven applications</b> — from <b>multi-agent road safety systems</b> 
-      to <b>finance RAG analytics</b> and <b>NLP pipelines</b>.  
-      Exploring <b>Generative AI</b>, <b>LLMs</b>, and <b>Computer Vision</b> for real-world impact.
-    </p>
-    <div class="mt-8 flex flex-wrap justify-center gap-4">
-      <a href="resume.pdf" download class="btn-primary">Download CV</a>
-      <a href="#projects" class="btn-secondary">See Projects</a>
+  <header id="home" class="relative flex items-center justify-center h-screen bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white">
+    <div class="absolute inset-0 bg-black/50 backdrop-blur"></div>
+    <div class="relative z-10 text-center max-w-3xl px-6">
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-4">
+        Hi, I’m <span class="text-cyan-300">Sri Pranay</span>
+      </h1>
+      <h2 class="typing-text text-2xl md:text-3xl font-semibold text-cyan-200"></h2>
+      <p class="mt-6 text-lg leading-relaxed text-gray-200">
+        I design and deploy <b>AI-driven applications</b> — from <b>multi-agent systems</b> 
+        to <b>finance RAG analytics</b> and <b>NLP pipelines</b>.
+      </p>
+      <div class="mt-8 flex justify-center gap-4">
+        <a href="resume.pdf" download class="btn-glow">📄 Download CV</a>
+        <a href="#projects" class="btn-outline">🚀 See Projects</a>
+      </div>
     </div>
   </header>
 
   <!-- EXPERIENCE -->
   <section id="experience" class="max-w-6xl mx-auto px-4 py-12">
     <h2 class="section-title">Experience</h2>
-    <div class="relative border-l-2 border-blue-500 pl-6">
-      <div class="mb-8">
-        <p class="font-semibold text-blue-600 dark:text-cyan-400">Business Analyst Intern – Vibe Store</p>
-        <span class="text-xs text-neutral-500">Mar–May 2025</span>
-        <ul class="list-disc pl-5 mt-2 text-sm">
-          <li>Delivered cross-functional insights to improve operations and enable data-driven decisions.</li>
-          <li>Automated sales reporting with Shiprocket, used SQL & Tableau to generate actionable insights.</li>
-          <li>Secured 25+ institutional partnerships, boosting brand visibility, market reach, and revenue.</li>
-          <li>Designed interactive dashboards to track KPIs, increasing reporting efficiency by 30%.</li>
-          <li>Collaborated with marketing team to identify customer trends, improving campaign ROI.</li>
-        </ul>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3 class="font-semibold text-blue-600 dark:text-cyan-400">Business Analyst Intern – Vibe Store</h3>
+          <span class="text-xs text-neutral-500">Mar–May 2025</span>
+          <ul class="list-disc pl-5 mt-2 text-sm">
+            <li>Delivered cross-functional insights to improve operations and enable data-driven decisions.</li>
+            <li>Automated sales reporting with Shiprocket, used SQL & Tableau to generate actionable insights.</li>
+            <li>Secured 25+ institutional partnerships, boosting brand visibility, market reach, and revenue.</li>
+            <li>Designed interactive dashboards to track KPIs, increasing reporting efficiency by 30%.</li>
+            <li>Collaborated with marketing team to identify customer trends, improving campaign ROI.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -67,85 +73,61 @@
 
       <!-- SafeRoad -->
       <article class="project-card">
-        <h3 class="project-title">🚦 SafeRoad – Multi-Agent Road Safety App</h3>
-        <p class="project-sub">
-          Computer Vision, Multi-Agent AI • Tools: Python, Streamlit, YOLOv8, LangChain
-        </p>
+        <div class="project-icon">🚦</div>
+        <h3 class="project-title">SafeRoad – Multi-Agent Road Safety App</h3>
+        <p class="project-sub">Computer Vision, Multi-Agent AI • Python, Streamlit, YOLOv8, LangChain</p>
         <ul class="project-list">
-          <li>Multi-agent system detecting road damages, speed breakers & vehicles in real time.</li>
-          <li>YOLOv8 + custom-trained model for object detection with agent orchestration.</li>
-          <li>Deployed on Streamlit Cloud with public live camera & upload support.</li>
+          <li>Detects road damages, speed breakers & vehicles in real time.</li>
+          <li>YOLOv8 + custom-trained model with agent orchestration.</li>
+          <li>Deployed on Streamlit Cloud with public camera & upload support.</li>
         </ul>
         <div class="project-links">
-          <a class="link-btn" href="https://roaddetectionapp-jc38geniosl5jnax22pp3z.streamlit.app/" target="_blank">Live App</a>
-          <a class="link-btn" href="https://github.com/sripranay/SafeRoad-MultiAgent" target="_blank">GitHub</a>
+          <a class="btn-glow" href="https://roaddetectionapp-jc38geniosl5jnax22pp3z.streamlit.app/" target="_blank">Live App</a>
+          <a class="btn-outline" href="https://github.com/sripranay/SafeRoad-MultiAgent" target="_blank">GitHub</a>
         </div>
       </article>
 
       <!-- Voice Chatbot -->
       <article class="project-card">
-        <h3 class="project-title">💬 Voice Web Chatbot (Mic Q&A with Web Search & TTS)</h3>
-        <p class="project-sub">
-          NLP, Speech, Retrieval • Tools: Python, Gradio, DDGS, Trafilatura, BeautifulSoup, gTTS
-        </p>
+        <div class="project-icon">💬</div>
+        <h3 class="project-title">Voice Web Chatbot</h3>
+        <p class="project-sub">NLP, Speech • Python, Gradio, DDGS, BS4, gTTS</p>
         <ul class="project-list">
-          <li>Voice-first assistant that records queries, fixes typos, searches the web, summarizes, and speaks answers.</li>
-          <li>Retrieval pipeline using DDGS + Trafilatura/BS4 + extractive ranking with source attribution.</li>
-          <li>Deployed on Hugging Face Spaces with reproducible repo + push-to-deploy workflow.</li>
+          <li>Voice-first assistant that records queries, searches the web, summarizes, and speaks answers.</li>
+          <li>Retrieval pipeline using DDGS + Trafilatura/BS4 + extractive ranking.</li>
+          <li>Deployed on Hugging Face Spaces with reproducible repo.</li>
         </ul>
         <div class="project-links">
-          <a class="link-btn" href="https://huggingface.co/spaces/chinthojusripranay/voice-web-chatbot" target="_blank">Live App</a>
-          <a class="link-btn" href="https://github.com/sripranay/voice-web-chatbot" target="_blank">GitHub</a>
+          <a class="btn-glow" href="https://huggingface.co/spaces/chinthojusripranay/voice-web-chatbot" target="_blank">Live App</a>
+          <a class="btn-outline" href="https://github.com/sripranay/voice-web-chatbot" target="_blank">GitHub</a>
         </div>
       </article>
 
       <!-- Finance RAG -->
       <article class="project-card">
-        <h3 class="project-title">📊 Financial Analysis RAG with Time-Series Data</h3>
-        <p class="project-sub">Finance, RAG, Time-Series • Tools: Python, Streamlit, ChromaDB</p>
+        <div class="project-icon">📊</div>
+        <h3 class="project-title">Financial Analysis RAG</h3>
+        <p class="project-sub">Finance, RAG • Python, Streamlit, ChromaDB</p>
         <ul class="project-list">
           <li>Semantic retrieval over daily market facts with OHLCV charts and SMA overlays.</li>
-          <li>Deployed on Streamlit Cloud with caching and SQLite patch.</li>
+          <li>Deployed on Streamlit Cloud with caching & SQLite patch.</li>
         </ul>
         <div class="project-links">
-          <a class="link-btn" href="https://finragproject-4xh5mghqxycwpbhxwut5xo.streamlit.app/" target="_blank">Live App</a>
-          <a class="link-btn" href="https://github.com/sripranay/fin_rag_project" target="_blank">GitHub</a>
+          <a class="btn-glow" href="https://finragproject-4xh5mghqxycwpbhxwut5xo.streamlit.app/" target="_blank">Live App</a>
+          <a class="btn-outline" href="https://github.com/sripranay/fin_rag_project" target="_blank">GitHub</a>
         </div>
       </article>
 
       <!-- OCR -->
       <article class="project-card">
-        <h3 class="project-title">✍️ OCR Handwriting Recognition using TrOCR</h3>
-        <p class="project-sub">NLP • Tools: PyTorch, HF Transformers</p>
+        <div class="project-icon">✍️</div>
+        <h3 class="project-title">OCR Handwriting Recognition</h3>
+        <p class="project-sub">NLP • PyTorch, HuggingFace</p>
         <ul class="project-list">
           <li>Fine-tuned TrOCR on IAM dataset (6.3% CER, 14.3% WER).</li>
         </ul>
         <div class="project-links">
-          <a class="link-btn" href="https://github.com/sripranay/ocr-Handwriting-Recognition" target="_blank">GitHub</a>
-        </div>
-      </article>
-
-      <!-- Zomato -->
-      <article class="project-card">
-        <h3 class="project-title">🍴 Zomato EDA — Insights & Forecasting</h3>
-        <p class="project-sub">Data Analysis • Tools: Pandas, Seaborn</p>
-        <ul class="project-list">
-          <li>Analyzed 3k+ records, visualized demand patterns, built forecasting models.</li>
-        </ul>
-        <div class="project-links">
-          <a class="link-btn" href="https://github.com/sripranay/Zomato-EDA-AI-ML" target="_blank">GitHub</a>
-        </div>
-      </article>
-
-      <!-- AutoScout24 -->
-      <article class="project-card">
-        <h3 class="project-title">🚗 AutoScout24 Car Price Prediction</h3>
-        <p class="project-sub">ML • Tools: Scikit-learn, Pandas</p>
-        <ul class="project-list">
-          <li>Cleaned & processed 15k+ listings; achieved R²≈0.896 using Ridge/Lasso.</li>
-        </ul>
-        <div class="project-links">
-          <span class="text-neutral-500">Repo: Add link</span>
+          <a class="btn-outline" href="https://github.com/sripranay/ocr-Handwriting-Recognition" target="_blank">GitHub</a>
         </div>
       </article>
 
@@ -155,7 +137,16 @@
   <!-- SKILLS -->
   <section id="skills" class="max-w-6xl mx-auto px-4 py-12">
     <h2 class="section-title">Skills</h2>
-    <p class="text-center">Python • PyTorch • TensorFlow • Streamlit • SQL • Tableau • NLP • LLMs</p>
+    <div class="flex flex-wrap justify-center gap-3">
+      <span class="skill-badge">🐍 Python</span>
+      <span class="skill-badge">🔥 PyTorch</span>
+      <span class="skill-badge">⚡ TensorFlow</span>
+      <span class="skill-badge">🚀 Streamlit</span>
+      <span class="skill-badge">📊 Tableau</span>
+      <span class="skill-badge">🧠 LLMs</span>
+      <span class="skill-badge">🔎 NLP</span>
+      <span class="skill-badge">🗄️ SQL</span>
+    </div>
   </section>
 
   <!-- EDUCATION -->
@@ -165,13 +156,13 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="max-w-6xl mx-auto px-4 py-12">
+  <section id="contact" class="max-w-6xl mx-auto px-4 py-12 text-center">
     <h2 class="section-title">Contact</h2>
-    <ul class="text-center">
-      <li>Email: <a href="mailto:sripranay004@gmail.com">sripranay004@gmail.com</a></li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/sripranay31/" target="_blank">linkedin.com/in/sripranay31</a></li>
-      <li>GitHub: <a href="https://github.com/sripranay" target="_blank">github.com/sripranay</a></li>
-    </ul>
+    <div class="flex justify-center gap-6 mt-4">
+      <a href="mailto:sripranay004@gmail.com" class="social-icon">📧</a>
+      <a href="https://www.linkedin.com/in/sripranay31/" target="_blank" class="social-icon">💼</a>
+      <a href="https://github.com/sripranay" target="_blank" class="social-icon">🐙</a>
+    </div>
   </section>
 
   <footer class="text-center py-6 text-xs text-neutral-500">
@@ -180,10 +171,36 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Dark mode toggle
     document.getElementById("themeToggle").addEventListener("click", () => {
       const isDark = document.documentElement.classList.toggle("dark");
       localStorage.setItem("theme", isDark ? "dark" : "light");
     });
+
+    // Typing effect
+    const roles = ["AI/ML Engineer", "Data Scientist", "GenAI Enthusiast"];
+    let i = 0, j = 0, currentRole = "", isDeleting = false;
+    const typingEl = document.querySelector(".typing-text");
+
+    function type() {
+      currentRole = roles[i];
+      typingEl.textContent = isDeleting
+        ? currentRole.substring(0, j--)
+        : currentRole.substring(0, j++);
+
+      if (!isDeleting && j === currentRole.length + 1) {
+        isDeleting = true;
+        setTimeout(type, 1000);
+      } else if (isDeleting && j === 0) {
+        isDeleting = false;
+        i = (i + 1) % roles.length;
+        setTimeout(type, 300);
+      } else {
+        setTimeout(type, isDeleting ? 50 : 120);
+      }
+    }
+    type();
   </script>
 </body>
 </html>
