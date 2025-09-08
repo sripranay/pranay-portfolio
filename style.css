@@ -1,9 +1,93 @@
-/* style.css – AI/ML Portfolio Theme */
+/* style.css – Modern AI/ML Portfolio */
 
 /* Font & Base */
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  line-height: 1.6;
+  line-height: 1.7;
+}
+
+/* Buttons */
+.btn-primary {
+  padding: 10px 22px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #2563eb, #06b6d4);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  padding: 10px 22px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+  background: #f3f4f6;
+}
+.dark .btn-secondary {
+  border-color: #374151;
+}
+.dark .btn-secondary:hover {
+  background: #111827;
+}
+
+/* Section Headings */
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-align: center;
+  background: linear-gradient(90deg, #2563eb, #06b6d4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 2rem;
+}
+
+/* Project Cards */
+.project-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 24px;
+  background: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+.dark .project-card {
+  background: #111827;
+  border-color: #374151;
+}
+.project-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+.project-sub {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+.project-list {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #374151;
+}
+.dark .project-sub, .dark .project-list {
+  color: #9ca3af;
+}
+.project-links {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
 }
 
 /* Link Buttons */
@@ -28,27 +112,9 @@ body {
   background: #111827;
 }
 
-/* Section Headings */
-section h2 {
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  margin-bottom: 1rem;
-  position: relative;
-}
-section h2::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 3px;
-  margin-top: 6px;
-  background: linear-gradient(90deg, #3b82f6, #06b6d4);
-  border-radius: 2px;
-}
-
-/* Contact links */
+/* Contact */
 #contact a {
   color: #2563eb;
-  text-decoration: none;
   font-weight: 500;
 }
 #contact a:hover {
