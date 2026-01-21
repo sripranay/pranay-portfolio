@@ -1,59 +1,199 @@
-/* style.css – AI/ML Portfolio Theme */
+/* ===============================
+   GLOBAL BASE
+================================ */
+:root {
+  --bg-light: #fafafa;
+  --bg-dark: #0a0a0a;
+  --card-light: #ffffff;
+  --card-dark: #111111;
+  --border-light: #e5e7eb;
+  --border-dark: #262626;
+  --text-muted-light: #6b7280;
+  --text-muted-dark: #9ca3af;
+  --accent: #2563eb;
+}
 
-/* Font & Base */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
 }
 
-/* Link Buttons */
-.link-btn {
-  padding: 6px 14px;
-  border-radius: 10px;
-  border: 1px solid #d1d5db;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.25s ease;
-  display: inline-block;
-}
-.link-btn:hover {
-  background: #f3f4f6;
-  transform: translateY(-1px);
-}
-.dark .link-btn {
-  border-color: #374151;
-  color: #e5e7eb;
-}
-.dark .link-btn:hover {
-  background: #111827;
-}
-
-/* Section Headings */
-section h2 {
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  margin-bottom: 1rem;
+/* ===============================
+   NAVBAR
+================================ */
+nav a {
   position: relative;
 }
-section h2::after {
+
+nav a::after {
   content: "";
-  display: block;
-  width: 40px;
-  height: 3px;
-  margin-top: 6px;
-  background: linear-gradient(90deg, #3b82f6, #06b6d4);
-  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
 }
 
-/* Contact links */
-#contact a {
-  color: #2563eb;
-  text-decoration: none;
-  font-weight: 500;
+nav a:hover::after {
+  width: 100%;
 }
-#contact a:hover {
-  text-decoration: underline;
+
+/* ===============================
+   HERO SECTION
+================================ */
+header h1 {
+  letter-spacing: -0.03em;
 }
-.dark #contact a {
-  color: #38bdf8;
+
+header p {
+  max-width: 720px;
+}
+
+header b {
+  color: var(--accent);
+}
+
+/* ===============================
+   BUTTONS & LINKS
+================================ */
+a {
+  transition: all 0.25s ease;
+}
+
+a:hover {
+  opacity: 0.85;
+}
+
+.link-btn {
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-light);
+  font-size: 0.85rem;
+}
+
+.dark .link-btn {
+  border-color: var(--border-dark);
+}
+
+.link-btn:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+/* ===============================
+   SECTIONS
+================================ */
+section {
+  animation: fadeUp 0.6s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section h2 {
+  letter-spacing: -0.02em;
+}
+
+/* ===============================
+   CARDS (PROJECTS)
+================================ */
+article {
+  background: var(--card-light);
+  border: 1px solid var(--border-light);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dark article {
+  background: var(--card-dark);
+  border-color: var(--border-dark);
+}
+
+article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.dark article:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+article h3 {
+  letter-spacing: -0.01em;
+}
+
+/* ===============================
+   LISTS
+================================ */
+ul li {
+  margin-bottom: 0.35rem;
+}
+
+/* ===============================
+   EXPERIENCE
+================================ */
+#experience p {
+  margin-top: 1.2rem;
+}
+
+/* ===============================
+   SKILLS
+================================ */
+#skills p {
+  color: var(--text-muted-light);
+}
+
+.dark #skills p {
+  color: var(--text-muted-dark);
+}
+
+/* ===============================
+   FOOTER
+================================ */
+footer {
+  border-top: 1px solid var(--border-light);
+}
+
+.dark footer {
+  border-color: var(--border-dark);
+}
+
+/* ===============================
+   THEME TOGGLE
+================================ */
+#themeToggle {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+#themeToggle:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* ===============================
+   RESPONSIVE TWEAKS
+================================ */
+@media (max-width: 640px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }
