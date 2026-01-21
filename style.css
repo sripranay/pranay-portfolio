@@ -1,18 +1,28 @@
 /* ===============================
-   GLOBAL BASE
+   ROOT VARIABLES
 ================================ */
 :root {
   --bg-light: #fafafa;
   --bg-dark: #0a0a0a;
+
   --card-light: #ffffff;
   --card-dark: #111111;
+
   --border-light: #e5e7eb;
   --border-dark: #262626;
+
+  --text-main-light: #111827;
+  --text-main-dark: #e5e7eb;
+
   --text-muted-light: #6b7280;
   --text-muted-dark: #9ca3af;
+
   --accent: #2563eb;
 }
 
+/* ===============================
+   BASE
+================================ */
 html {
   scroll-behavior: smooth;
 }
@@ -45,7 +55,7 @@ nav a:hover::after {
 }
 
 /* ===============================
-   HERO SECTION
+   HERO
 ================================ */
 header h1 {
   letter-spacing: -0.03em;
@@ -60,7 +70,7 @@ header b {
 }
 
 /* ===============================
-   BUTTONS & LINKS
+   LINKS & BUTTONS
 ================================ */
 a {
   transition: all 0.25s ease;
@@ -71,7 +81,7 @@ a:hover {
 }
 
 .link-btn {
-  padding: 0.4rem 0.75rem;
+  padding: 0.45rem 0.8rem;
   border-radius: 0.5rem;
   border: 1px solid var(--border-light);
   font-size: 0.85rem;
@@ -83,12 +93,12 @@ a:hover {
 
 .link-btn:hover {
   background: var(--accent);
-  color: white;
+  color: #ffffff !important;
   border-color: var(--accent);
 }
 
 /* ===============================
-   SECTIONS
+   SECTIONS ANIMATION
 ================================ */
 section {
   animation: fadeUp 0.6s ease both;
@@ -105,12 +115,8 @@ section {
   }
 }
 
-section h2 {
-  letter-spacing: -0.02em;
-}
-
 /* ===============================
-   CARDS (PROJECTS)
+   PROJECT CARDS (FIXED)
 ================================ */
 article {
   background: var(--card-light);
@@ -118,22 +124,48 @@ article {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+/* Dark mode card */
 .dark article {
   background: var(--card-dark);
   border-color: var(--border-dark);
 }
 
+/* TEXT VISIBILITY FIX */
+article,
+article h3,
+article p,
+article li,
+article a {
+  color: var(--text-main-light);
+}
+
+.dark article,
+.dark article h3,
+.dark article p,
+.dark article li,
+.dark article a {
+  color: var(--text-main-dark);
+}
+
+/* Muted text */
+article .text-xs,
+article p {
+  color: var(--text-muted-light);
+}
+
+.dark article .text-xs,
+.dark article p {
+  color: var(--text-muted-dark);
+}
+
+/* Hover effect */
 article:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 .dark article:hover {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-article h3 {
-  letter-spacing: -0.01em;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
 }
 
 /* ===============================
@@ -181,11 +213,11 @@ footer {
 
 #themeToggle:hover {
   background: var(--accent);
-  color: white;
+  color: #ffffff;
 }
 
 /* ===============================
-   RESPONSIVE TWEAKS
+   RESPONSIVE
 ================================ */
 @media (max-width: 640px) {
   header h1 {
